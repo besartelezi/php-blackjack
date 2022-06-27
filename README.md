@@ -58,16 +58,17 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
   - [x]  Make it expect the `Deck` object as a parameter.
   - [x]  Pass this `Deck` from the `Blackjack` constructor.
   - [x]  Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
-       - Check it again later to be sure  
+       - Unsure of this step  
 - [ ] Go back to the `Player` class and add the following logic in your empty methods:
-  - [ ]  `getScore` loops over all the cards and return the total value of that player.
-  - [ ]  `hasLost` will return the bool of the lost property.
-  - [ ]  `hit` should add a card to the player. If this brings him above 21, set `lost` property to `true`. To count his score use the method `getScore` you wrote earlier. This method should expect the `$deck` variable as an argument from outside, to draw the card.
-     - [ ]  (optional) For bonus points make the number 21 a class constant: this is a [magical value](https://stackoverflow.com/questions/47882/what-is-a-magic-number-and-why-is-it-bad) we want to avoid.
-  - [ ]  `surrender` should make you surrender the game. (Dealer wins.)
+  - [x]  `getScore` loops over all the cards and return the total value of that player.
+  - [x]  `hasLost` will return the bool of the lost property.
+  - [x]  `hit` should add a card to the player. If this brings him above 21, set `lost` property to `true`. To count his score use the method `getScore` you wrote earlier. This method should expect the `$deck` variable as an argument from outside, to draw the card.
+       - Unsure of this step
+       - [ ]  (optional) For bonus points make the number 21 a class constant: this is a [magical value](https://stackoverflow.com/questions/47882/what-is-a-magic-number-and-why-is-it-bad) we want to avoid.
+  - [x]  `surrender` should make you surrender the game. (Dealer wins.)
     This sets the property `lost` in the `player` instance to true.
-  - [ ]  `stand` does not have a method in the player class but will instead call hit on the `dealer` instance. (you have to do nothing here)
-
+  - [x]  `stand` does not have a method in the player class but will instead call hit on the `dealer` instance. (you have to do nothing here)
+     - Unsure of this step
 #### Creating the index.php  file
 
 - [ ]  Create an index.php file with the following code:
@@ -124,3 +125,18 @@ Methods are functions **inside** classes.
 The issue I'm having here is that I'm unsure of what type of information the method has to handle, whether it be an int, strings, or arrays.
 I will probably get a better idea of what the answer is once I've written some more code.
 
+## Pre-Written Code: "Pros and Cons"
+I'm feeling quite conflicted working on this challenge, and those feelings are caused by the fact that we're working with code that was provided for us by the coaches.
+On one hand, I can use that code as an example of how I should work.
+But on the other, I need to spend some time understanding the code and understanding how the entire Blackjack game will work once I'm done.
+If I coded everything by myself from the start, it would've been a lot harder to start on the challenge, but I would've been following along quite better.
+
+This was, in my opinion, done on purpose by the coaches.
+This way we'll get some extra assistance with OOP, which is a difficult topic.
+But we'll also learn to work on the code created by others.
+This is something that we will most definitely experience a lot once we start working as Web Developers.
+Understanding someone else's code can help you write more understandable code yourself in return.
+
+
+#### Quick P.S. : The challenge is fun, and I love the fact that we're learning about OOP, but this is how the second half of the challenge has got me like:
+![gon-gif](resources/smoke-gon.gif)
