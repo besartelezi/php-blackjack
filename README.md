@@ -30,24 +30,24 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
 
 ### Instructions
 #### Creating the base classes
-- [ ] Create a class called `Player` in the file `Player.php`.
-- [ ] Add 2 private properties:
-  - [ ] `cards` (array)
-  - [ ] `lost` (bool, default = false)
-- [ ] Add a couple of empty public methods to this class:
-  - [ ]  `hit`
-  - [ ]  `surrender`
-  - [ ]  `getScore`
-  - [ ]  `hasLost`
-- [ ] Create a class called `Blackjack` in the file `Blackjack.php`
-- [ ] Add 3 private properties
-  - [ ]  `player` (Player)
-  - [ ]  `dealer` (Player for now)
-  - [ ]  `deck`  (Deck)
-- [ ] Add the following public methods:
-  - [ ]  `getPlayer` (returns the `player` object)
-  - [ ]  `getDealer` (returns the `dealer` object)
-  - [ ]  `getDeck` (returns the `deck` object)
+- [x] Create a class called `Player` in the file `Player.php`.
+- [x] Add 2 private properties:
+  - [x] `cards` (array)
+  - [x] `lost` (bool, default = false)
+- [x] Add a couple of empty public methods to this class:
+  - [x]  `hit`
+  - [x]  `surrender`
+  - [x]  `getScore`
+  - [x]  `hasLost`
+- [x] Create a class called `Blackjack` in the file `Blackjack.php`
+- [x] Add 3 private properties
+  - [x]  `player` (Player)
+  - [x]  `dealer` (Player for now)
+  - [x]  `deck`  (Deck)
+- [x] Add the following public methods:
+  - [x]  `getPlayer` (returns the `player` object)
+  - [x]  `getDealer` (returns the `dealer` object)
+  - [x]  `getDeck` (returns the `deck` object)
 - [ ] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) do the following:
   - [ ]  Instantiate the Player class twice, insert it into the `player` property and a `dealer` property.
   - [ ]  Create a new [`deck` object](code/Deck.php) (code has already been written for you!).
@@ -116,3 +116,8 @@ All classes are ready, now you just need to write some minimal glue in the `inde
 - [ ] -> add a nice to have "catch going bust first 2 cards"
 
 ## [What's 9 + 10?](https://www.youtube.com/shorts/_MX-g3ErZA0)
+The very first steps are just to create some private properties and public methods.
+Methods are functions **inside** classes.
+The issue I'm having here is that I'm unsure of what type of information the method has to handle, whether it be an int, strings, or arrays.
+I will probably get a better idea of what the answer is once I've written some more code.
+
