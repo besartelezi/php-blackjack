@@ -40,4 +40,9 @@ class Deck
     {
         return array_shift($this->cards);
     }
+
 }
+
+$deck = new Deck ();
+shuffle($this->deck);
+

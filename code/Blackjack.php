@@ -24,6 +24,7 @@ class Blackjack
 
     public function __construct()
     {
-
+        $this->player = new Player();
+        $this->dealer = new Player();
     }
 }

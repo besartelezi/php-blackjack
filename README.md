@@ -48,10 +48,12 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
   - [x]  `getPlayer` (returns the `player` object)
   - [x]  `getDealer` (returns the `dealer` object)
   - [x]  `getDeck` (returns the `deck` object)
-- [ ] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) do the following:
-  - [ ]  Instantiate the Player class twice, insert it into the `player` property and a `dealer` property.
-  - [ ]  Create a new [`deck` object](code/Deck.php) (code has already been written for you!).
-  - [ ]  Shuffle the cards with `shuffle` method on `deck`.
+- [x] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) do the following:
+  - [x]  Instantiate the Player class twice, insert it into the `player` property and a `dealer` property.
+  - [x]  Create a new [`deck` object](code/Deck.php) (code has already been written for you!).
+  - [x]  Shuffle the cards with `shuffle` method on `deck`.
+      - I might redo this step in the future, since all properties are private and no setters or getters have been created yet. 
+      - For now I will keep mindlessly following the instructions, but it's good to keep this in the back of my head.
 - [ ] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
   - [ ]  Make it expect the `Deck` object as a parameter.
   - [ ]  Pass this `Deck` from the `Blackjack` constructor.
