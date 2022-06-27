@@ -8,7 +8,7 @@ class Player
 
     public function hit ($deck)
     {
-        $this->deck->drawCard($this->player);
+        $this->cards = $deck->drawCard();
         if ($this->getScore() > 21) {
             $this->lost = true;
         }
@@ -40,6 +40,7 @@ class Player
 
     public function __construct($deck)
     {
-
+        $this->cards = $deck->drawCard();
+        $this->cards = $deck->drawCard();
     }
 }

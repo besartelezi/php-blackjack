@@ -54,12 +54,12 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
   - [x]  Shuffle the cards with `shuffle` method on `deck`.
       - I might redo this step in the future, since all properties are private and no setters or getters have been created yet. 
       - For now I will keep mindlessly following the instructions, but it's good to keep this in the back of my head.
-- [x] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
+- [ ] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
   - [x]  Make it expect the `Deck` object as a parameter.
-  - [x]  Pass this `Deck` from the `Blackjack` constructor.
+  - [ ]  Pass this `Deck` from the `Blackjack` constructor.
   - [x]  Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
        - Unsure of this step  
-- [ ] Go back to the `Player` class and add the following logic in your empty methods:
+- [x] Go back to the `Player` class and add the following logic in your empty methods:
   - [x]  `getScore` loops over all the cards and return the total value of that player.
   - [x]  `hasLost` will return the bool of the lost property.
   - [x]  `hit` should add a card to the player. If this brings him above 21, set `lost` property to `true`. To count his score use the method `getScore` you wrote earlier. This method should expect the `$deck` variable as an argument from outside, to draw the card.
@@ -72,11 +72,11 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
 #### Creating the index.php  file
 
 - [ ]  Create an index.php file with the following code:
-  - [ ]  Require all the files with the classes you already created. Ideally you want a seperate file for each class.
-  - [ ]  Start the PHP session
-  - [ ]  If the session does not have a `Blackjack` variable yet:
-     - [ ]   Create a new `Blackjack` object.
-     - [ ]  Put the `Blackjack` object in the session
+  - [x]  Require all the files with the classes you already created. Ideally you want a seperate file for each class.
+  - [x]  Start the PHP session
+  - [x]  If the session does not have a `Blackjack` variable yet:
+     - [x]   Create a new `Blackjack` object.
+     - [x]  Put the `Blackjack` object in the session
   - [ ]  Use buttons or links to send to the `index.php` page what the player's action is. (i.e. hit/stand/surrender)
 
 #### Take a moment to enjoy the view
@@ -86,9 +86,7 @@ Everything from the player is now done! Job well done!
 So far we are assuming the player and dealer play with the same rules, hence they share a class. There is of course an important difference: the dealer does keep playing with the function `hit` until he has at least 15.
 
 - [ ] To change this behavior, we have are going [extend](https://www.php.net/manual/en/language.oop5.inheritance.php) the `player` class and extend it to a newly created `dealer` class.
-
 - [ ] Change the `Blackjack` class to create a new `dealer` object instead of a `player` object for the property of the dealer.
-
 - [ ] Now create a `hit` function that keeps drawing cards until the dealer has at least 15 points. The tricky part is that we also need the `lost` check we already had in the `hit` function of the player. We could just copy the code but duplicated code is never the solution, instead you can use the following code to call the old `hit` function:
 
 ```parent::hit();```
