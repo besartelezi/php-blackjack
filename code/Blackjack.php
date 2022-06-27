@@ -7,28 +7,27 @@ class Blackjack
     private Player $dealer;
     private Deck $deck;
 
-    public function getPlayer ()
+    function __construct()
+    {
+        $this->player = new Player();
+        $this->dealer = new Player();
+        $deck = new Deck();
+        $deck->shuffle();
+    }
+
+    public function getPlayer () :Player
     {
         return $this->player;
     }
 
-    public function getDealer ()
+    public function getDealer () :Player
     {
         return $this->dealer;
     }
 
-    public function getDeck ()
+    public function getDeck () :Deck
     {
         return $this->deck;
-    }
-
-
-    function __construct()
-    {
-        $this->player = new Player($this->Ddeck);
-        $this->dealer = new Player($this->deck);
-        $deck = new Deck();
-        $deck->shuffle();
     }
 
 
