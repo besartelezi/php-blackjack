@@ -54,10 +54,11 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
   - [x]  Shuffle the cards with `shuffle` method on `deck`.
       - I might redo this step in the future, since all properties are private and no setters or getters have been created yet. 
       - For now I will keep mindlessly following the instructions, but it's good to keep this in the back of my head.
-- [ ] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
-  - [ ]  Make it expect the `Deck` object as a parameter.
-  - [ ]  Pass this `Deck` from the `Blackjack` constructor.
-  - [ ]  Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
+- [x] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
+  - [x]  Make it expect the `Deck` object as a parameter.
+  - [x]  Pass this `Deck` from the `Blackjack` constructor.
+  - [x]  Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
+       - Check it again later to be sure  
 - [ ] Go back to the `Player` class and add the following logic in your empty methods:
   - [ ]  `getScore` loops over all the cards and return the total value of that player.
   - [ ]  `hasLost` will return the bool of the lost property.
