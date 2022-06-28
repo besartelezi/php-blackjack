@@ -9,10 +9,10 @@ require 'Player.php';
 require 'Blackjack.php';
 
 session_start();
-$blackjackObject = new Blackjack();
-$_SESSION['sample'] = serialize($blackjackObject);
+$newGame = new Blackjack();
+$_SESSION['sample'] = serialize($newGame);
 
-
+//Doublecheck all steps!!!!!!!!!!!!!!!!!!!!
 ?>
 <form action ="Player.php" method="get">
     <button type="submit" name ="hit" value ="hit">Hit</button>

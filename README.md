@@ -52,11 +52,11 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
   - [x]  Instantiate the Player class twice, insert it into the `player` property and a `dealer` property.
   - [x]  Create a new [`deck` object](code/Deck.php) (code has already been written for you!).
   - [x]  Shuffle the cards with `shuffle` method on `deck`.
-      - I might redo this step in the future, since all properties are private and no setters or getters have been created yet. 
-      - For now I will keep mindlessly following the instructions, but it's good to keep this in the back of my head.
 - [ ] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
   - [x]  Make it expect the `Deck` object as a parameter.
-  - [ ]  Pass this `Deck` from the `Blackjack` constructor.
+  - [x]  Pass this `Deck` from the `Blackjack` constructor.
+      * `$this->player = new Player($deck);`
+        * Putting the $deck inside of the brackets in the new Player is the way to go for this step
   - [x]  Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
        - Unsure of this step  
 - [x] Go back to the `Player` class and add the following logic in your empty methods:
@@ -138,3 +138,5 @@ Understanding someone else's code can help you write more understandable code yo
 
 #### Quick P.S. : The challenge is fun, and I love the fact that we're learning about OOP, but this is how the second half of the challenge has got me like:
 ![gon-gif](resources/smoke-gon.gif)
+
+## 
