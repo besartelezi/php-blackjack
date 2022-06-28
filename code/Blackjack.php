@@ -9,10 +9,10 @@ class Blackjack
 
     function __construct()
     {
-        $deck = new Deck();
-        $deck->shuffle();
-        $this->player = new Player($deck);
-        $this->dealer = new Dealer($deck);
+        $this->deck = new Deck();
+        $this->deck->shuffle();
+        $this->player = new Player($this->deck);
+        $this->dealer = new Dealer($this->deck);
 
     }
 
@@ -21,7 +21,7 @@ class Blackjack
         return $this->player;
     }
 
-    public function getDealer () :Player
+    public function getDealer () :Dealer
     {
         return $this->dealer;
     }
