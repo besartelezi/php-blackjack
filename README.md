@@ -94,9 +94,16 @@ So far we are assuming the player and dealer play with the same rules, hence the
 #### Final push
 All classes are ready, now you just need to write some minimal glue in the `index.php`. The final result should be the following:
 
-- [ ] When you the **hit** button call `hit` on player, then check the lost status of the player.
+- [ ] When you click the **hit** button call `hit` on player, then check the lost status of the player.
    You will need to pass a `Deck` variable to this function, you can use the `Blackjack::getDeck()` method for this.
-- [ ] When you the **stand** button call `hit` on dealer, then check the lost status of the dealer. If he is not lost, compare scores to set the winner (If equal the dealer wins).
+
+-> When clicking on the **hit** button, I need to call the `hit` function on the player. 
+After the hit, I need to check if the player has lost, this means, checking if `hasLost` = true or false.
+
+
+
+
+- [ ] When you click the **stand** button call `hit` on dealer, then check the lost status of the dealer. If he is not lost, compare scores to set the winner (If equal the dealer wins).
 - [ ] **Surrender**: the dealer auto wins.
 - [ ] Always display on the page the scores of both players. If you have a winner, display it.
 - [ ] End of the game: destroy the current `blackjack` variable so the game restarts.
@@ -108,9 +115,10 @@ All classes are ready, now you just need to write some minimal glue in the `inde
     - [ ] If the player wins the bet he gains double the amount of chips.
 - [ ] Implement the blackjack first turn rule: if the player draws 21 the first turn: he directly wins. If the dealer draws 21 the first turn, he wins. If both draw it, it is a tie. 
     - [ ] When you implement both nice to have features, a blackjack means an auto win of 10 chips, a blackjack of the dealer a loss of 5 chips for the player.
+- [ ] Reveal of the dealer cards at the end
     
 #### Notes
-- [ ] Final push: 1 & 2: miss the word "click"
+- [x] Final push: 1 & 2: miss the word "click"
 - [ ] Nice to have: reveal of dealer cards at the end
 - [ ] Change code in Card.php -> add css class
 - [ ] -> add note to explain why we show the score of the dealer
