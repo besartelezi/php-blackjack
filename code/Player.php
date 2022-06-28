@@ -61,9 +61,9 @@ class Dealer extends Player
             //this loops the hit function that we made earlier, but for the dealer
             //we did not have to rewrite any code because this is the child class and the function was already made in the parent class
             //the $this->getScore part is not that important, it just needs to loop enough times and I used this method in order to not hardcode anything
-            for ($i=0; $i < $this->getScore(); $i++)
             {
-                do {
+                do
+                {
                     parent::hit($deck);
                 }
                 while ($this->getScore() < 15);
