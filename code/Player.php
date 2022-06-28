@@ -46,9 +46,9 @@ class Player
 }
 class Dealer extends Player
 {
-    public function __construct($deck, $cards, $lost)
+    public function __construct($deck)
     {
-        parent::__construct($deck, $cards, $lost);
+        parent::__construct($deck);
     }
 
     public function hit ($deck)
