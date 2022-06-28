@@ -138,3 +138,17 @@ Understanding someone else's code can help you write more understandable code yo
 
 #### Quick P.S. : The challenge is fun, and I love the fact that we're learning about OOP, but this is how the second half of the challenge has got me like:
 ![gon-gif](resources/smoke-gon.gif)
+
+## Git Gud Scrub
+Working on this challenge, I did notice something that might need to improve in the way I use Github.
+When committing changes, I add all the changes I made and add a single comment that describes all the changes I made.
+But it might be better to do it this way:
+* Add changes of a single PHP file, not all the files I worked on.
+* Commit those changes, add a comment that describes what I did on that file.
+* Once I've committed that, I add a new file and repeat the previous steps.
+
+This might make my Github look more presentable.
+It would also make working in teams in the future go a **LOT** smoother, since everything is more structured.
+Changing my method like this is something worth practicing.
+
+
