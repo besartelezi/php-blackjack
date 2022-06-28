@@ -12,8 +12,8 @@ session_start();
 $newGame = new Blackjack();
 $_SESSION['sample'] = serialize($newGame);
 
-//Doublecheck all steps!!!!!!!!!!!!!!!!!!!!
 ?>
+
 <form action ="Player.php" method="get">
     <button type="submit" name ="hit" value ="hit">Hit</button>
     <button type="submit" name ="stand" value ="stand">Stand</button>

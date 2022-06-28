@@ -52,7 +52,7 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
   - [x]  Instantiate the Player class twice, insert it into the `player` property and a `dealer` property.
   - [x]  Create a new [`deck` object](code/Deck.php) (code has already been written for you!).
   - [x]  Shuffle the cards with `shuffle` method on `deck`.
-- [ ] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
+- [x] In the [constructor](https://www.php.net/manual/en/language.oop5.decon.php) of the `Player` class;
   - [x]  Make it expect the `Deck` object as a parameter.
   - [x]  Pass this `Deck` from the `Blackjack` constructor.
       * `$this->player = new Player($deck);`
@@ -71,13 +71,13 @@ The coaches at BeCode have provided some clear instructions for us to follow, wh
      - Unsure of this step
 #### Creating the index.php  file
 
-- [ ]  Create an index.php file with the following code:
+- [x]  Create an index.php file with the following code:
   - [x]  Require all the files with the classes you already created. Ideally you want a seperate file for each class.
   - [x]  Start the PHP session
   - [x]  If the session does not have a `Blackjack` variable yet:
      - [x]   Create a new `Blackjack` object.
      - [x]  Put the `Blackjack` object in the session
-  - [ ]  Use buttons or links to send to the `index.php` page what the player's action is. (i.e. hit/stand/surrender)
+  - [x]  Use buttons or links to send to the `index.php` page what the player's action is. (i.e. hit/stand/surrender)
 
 #### Take a moment to enjoy the view
 Everything from the player is now done! Job well done!
@@ -85,9 +85,9 @@ Everything from the player is now done! Job well done!
 #### The dealer
 So far we are assuming the player and dealer play with the same rules, hence they share a class. There is of course an important difference: the dealer does keep playing with the function `hit` until he has at least 15.
 
-- [ ] To change this behavior, we have are going [extend](https://www.php.net/manual/en/language.oop5.inheritance.php) the `player` class and extend it to a newly created `dealer` class.
-- [ ] Change the `Blackjack` class to create a new `dealer` object instead of a `player` object for the property of the dealer.
-- [ ] Now create a `hit` function that keeps drawing cards until the dealer has at least 15 points. The tricky part is that we also need the `lost` check we already had in the `hit` function of the player. We could just copy the code but duplicated code is never the solution, instead you can use the following code to call the old `hit` function:
+- [x] To change this behavior, we are going [extend](https://www.php.net/manual/en/language.oop5.inheritance.php) the `player` class and extend it to a newly created `dealer` class.
+- [x] Change the `Blackjack` class to create a new `dealer` object instead of a `player` object for the property of the dealer.
+- [x] Now create a `hit` function that keeps drawing cards until the dealer has at least 15 points. The tricky part is that we also need the `lost` check we already had in the `hit` function of the player. We could just copy the code but duplicated code is never the solution, instead you can use the following code to call the old `hit` function:
 
 ```parent::hit();```
 
@@ -138,5 +138,3 @@ Understanding someone else's code can help you write more understandable code yo
 
 #### Quick P.S. : The challenge is fun, and I love the fact that we're learning about OOP, but this is how the second half of the challenge has got me like:
 ![gon-gif](resources/smoke-gon.gif)
-
-## 

@@ -12,7 +12,7 @@ class Blackjack
         $deck = new Deck();
         $deck->shuffle();
         $this->player = new Player($deck);
-        $this->dealer = new Player($deck);
+        $this->dealer = new Dealer($deck);
 
     }
 
