@@ -13,18 +13,20 @@ class Player
         $this->cards[] = $deck->drawCard();
     }
 
-    public function hit ($deck)
+    public function hit (Deck $deck)
     {
         $this->cards[] = $deck->drawCard();
-        if ($this->getScore() > 21) {
+        if ($this->getScore() > 21)
+        {
             $this->lost = true;
+            $this->hasLost();
         }
-        return $deck;
+        return $this->cards;
     }
 
     public function surrender () :bool
     {
-        $this->hasLost();
+        return $this->hasLost();
     }
 
 //getScore has to:
@@ -32,7 +34,7 @@ class Player
     public function getScore () :int
     {
         $sum = 0;
-        for ($i =0; count($this->cards) > $i ; $i++ )
+        for ($i =0; count($this->cards) > $i ; $i++)
         {
             //this code works perfectly if I replace getRawValue by getValue
             $sum += $this->cards[$i]->getValue();

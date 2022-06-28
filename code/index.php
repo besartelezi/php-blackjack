@@ -21,17 +21,27 @@ else
 
 $deck = new Deck();
 $deck->shuffle();
-foreach($deck->getCards() AS $card) {
+foreach($deck->getCards() AS $card)
+{
     echo $card->getUnicodeCharacter(true);
     echo '<br>';
 }
 
 echo $newGame->getPlayer()->hasLost() ? 'true' : 'false';
 
+
+//Current issue is: player can only hit once, not multiple times, need to see what the issue is.
+//Also, the hasLost is constantly set wrong, it's always true even when it's supposed to be false.
+//Look at similarities between HIT, STAND, and SURRENDER
 if (isset($_POST['hit']))
 {
     $newGame->getPlayer()->hit($newGame->getDeck());
+    $newGame->getPlayer()->hasLost();
+    //line 41 = something that will happen to all functions, how can we write this without rewriting code?
+    $_SESSION['newGame'] = serialize($newGame);
+    header('Location: '.$_SERVER['PHP_SELF']);
 }
+
 
 if (isset($_SESSION))
 {
@@ -43,19 +53,33 @@ if (isset($_SESSION))
     echo $newGame->getDealer()->getScore();
 }
 
-if (isset($_POST))
-if ($newGame->getPlayer()->hasLost() === true) {
-    echo "loser";
+if (isset($_POST)) {
+    if ($newGame->getPlayer()->hasLost() === true) {
+        echo "loser";
+    }
 }
+
 
 ?>
 
-
-
-
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BlackJack with JackBlack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <form action ="index.php" method="post">
     <button type="submit" name ="hit" value ="hit">Hit</button>
     <button type="submit" name ="stand" value ="stand">Stand</button>
     <button type="submit" name ="surrender" value ="surrender">Surrender</button>
 </form>
+
+</body>
+</html>
+
+
+
+
