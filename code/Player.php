@@ -19,14 +19,19 @@ class Player
         if ($this->getScore() > 21)
         {
             $this->lost = true;
-            $this->hasLost();
         }
         return $this->cards;
     }
 
+    public function setLost (): bool
+    {
+        $this->lost=true;
+        return $this->lost;
+    }
+
     public function surrender () :bool
     {
-        return $this->hasLost();
+        return $this->setLost();
     }
 
 //getScore has to:
