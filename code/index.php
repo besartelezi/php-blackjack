@@ -27,6 +27,7 @@ require 'Blackjack.php';
 
 <?php
 
+//Starts session
 session_start();
 if(isset($_SESSION['newGame']))
 {
@@ -38,13 +39,15 @@ else
     $_SESSION['newGame'] = serialize($newGame);
 }
 
-
 //Current issue is: player can only hit once, not multiple times, need to see what the issue is.
 //Also, the hasLost is constantly set wrong, it's always true even when it's supposed to be false.
 //Look at similarities between HIT, STAND, and SURRENDER
 
+//Hit button of the player
 if (isset($_POST['hit']))
 {
+    //If the player hasn't lost yet, he can press the button.
+    //Once the player has lost, he can't use the button anymore.
     if (!$newGame->getPlayer()->hasLost())
     {
         $newGame->getPlayer()->hit($newGame->getDeck());
@@ -54,27 +57,32 @@ if (isset($_POST['hit']))
     }
 }
 
+//When the player loses, the following happens
 if ($newGame->getPlayer()->hasLost())
 {
     echo 'Play Again! Just try and win this time ok?';
 }
+//When the dealer loses, the following happens
 elseif ($newGame->getDealer()->hasLost())
 {
     echo 'Play Again!';
 }
 
-
+//The stand button
 if (isset($_POST['stand']))
 {
+    //activates the hit function of the dealer
     $newGame->getDealer()->hit($newGame->getDeck());
-    //find a way to not repeat this line of code
+    //if both the dealer and the player haven't lost yet, meaning they're both not over 21, the following happens
     if (!$newGame->getDealer()->hasLost() && !$newGame->getPlayer()->hasLost())
     {
+        //if the dealer has a score that's equal to or higher than the player's score, the dealer wins
         if ($newGame->getDealer()->getScore() >= $newGame->getPlayer()->getScore())
         {
             $newGame->getPlayer()->setLost();
             echo 'The Dealer wins!';
         }
+        //if that's not the case, then the player wins
         else
         {
             $newGame->getDealer()->setLost();
@@ -82,12 +90,14 @@ if (isset($_POST['stand']))
         }
     }
     else
+    //But if the dealer gets above 21, the hit loop will stop, and the dealer will lose
     {
         $newGame->getDealer()->setLost();
         echo 'GG EZ, you win!';
     }
 }
 
+//The player's and dealer's scores are visible
 if (isset($_SESSION))
 {
     echo "<br>";
@@ -95,21 +105,23 @@ if (isset($_SESSION))
     echo $newGame->getPlayer()->getScore();
     echo "<br>";
     echo "The Dealer's score is: ";
+    //If the dealer or the player has lost, the dealer's score will be visible
     if ($newGame->getDealer()->hasLost() || $newGame->getPlayer()->hasLost())
     {
         echo $newGame->getDealer()->getScore();
     }
+    //if not, then the dealers score will be hidden
     else
     {
         echo "?";
     }}
 
+//pressing the play again button, destroys the session and resets to the index
 if (isset($_POST['game'])) {
     session_destroy();
+    //If I don't add this piece of code that resets to the index, then, when the player has over 21, the play again button will only work if you press it twice
     header('Location: index.php');
 }
-
-
 ?>
 
 </body>
