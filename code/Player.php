@@ -45,7 +45,6 @@ class Player
 
     public function hasLost () :bool
     {
-        $this->lost = true;
         return $this->lost;
     }
 }

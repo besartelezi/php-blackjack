@@ -27,8 +27,6 @@ foreach($deck->getCards() AS $card)
     echo '<br>';
 }
 
-echo $newGame->getPlayer()->hasLost() ? 'true' : 'false';
-
 
 //Current issue is: player can only hit once, not multiple times, need to see what the issue is.
 //Also, the hasLost is constantly set wrong, it's always true even when it's supposed to be false.
@@ -36,11 +34,12 @@ echo $newGame->getPlayer()->hasLost() ? 'true' : 'false';
 if (isset($_POST['hit']))
 {
     $newGame->getPlayer()->hit($newGame->getDeck());
-    $newGame->getPlayer()->hasLost();
     //line 41 = something that will happen to all functions, how can we write this without rewriting code?
     $_SESSION['newGame'] = serialize($newGame);
     header('Location: '.$_SERVER['PHP_SELF']);
 }
+
+echo $newGame->getPlayer()->hasLost() ? 'true' : 'false';
 
 
 if (isset($_SESSION))
@@ -52,13 +51,6 @@ if (isset($_SESSION))
     echo "The Dealer's score is: ";
     echo $newGame->getDealer()->getScore();
 }
-
-if (isset($_POST)) {
-    if ($newGame->getPlayer()->hasLost() === true) {
-        echo "loser";
-    }
-}
-
 
 ?>
 
