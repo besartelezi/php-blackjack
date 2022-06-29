@@ -69,12 +69,13 @@ elseif ($newGame->getDealer()->hasLost())
 }
 
 //The stand button
-if (isset($_POST['stand']))
+//BUG -> the user can still press this button whenever they like, even after the user has lost because he hit too much
+if (isset($_POST['stand']) && !$newGame->getPlayer()->hasLost())
 {
     //activates the hit function of the dealer
     $newGame->getDealer()->hit($newGame->getDeck());
     //if both the dealer and the player haven't lost yet, meaning they're both not over 21, the following happens
-    if (!$newGame->getDealer()->hasLost() && !$newGame->getPlayer()->hasLost())
+    if (!$newGame->getDealer()->hasLost())
     {
         //if the dealer has a score that's equal to or higher than the player's score, the dealer wins
         if ($newGame->getDealer()->getScore() >= $newGame->getPlayer()->getScore())
