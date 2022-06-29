@@ -94,7 +94,7 @@ So far we are assuming the player and dealer play with the same rules, hence the
 #### Final push
 All classes are ready, now you just need to write some minimal glue in the `index.php`. The final result should be the following:
 
-- [ ] When you click the **hit** button call `hit` on player, then check the lost status of the player.
+- [x] When you click the **hit** button call `hit` on player, then check the lost status of the player.
    You will need to pass a `Deck` variable to this function, you can use the `Blackjack::getDeck()` method for this.
 
 -> When clicking on the **hit** button, I need to call the `hit` function on the player. 
@@ -103,10 +103,10 @@ After the hit, I need to check if the player has lost, this means, checking if `
 
 
 
-- [ ] When you click the **stand** button call `hit` on dealer, then check the lost status of the dealer. If he is not lost, compare scores to set the winner (If equal the dealer wins).
+- [x] When you click the **stand** button call `hit` on dealer, then check the lost status of the dealer. If he is not lost, compare scores to set the winner (If equal the dealer wins).
 - [ ] **Surrender**: the dealer auto wins.
-- [ ] Always display on the page the scores of both players. If you have a winner, display it.
-- [ ] End of the game: destroy the current `blackjack` variable so the game restarts.
+- [x] Always display on the page the scores of both players. If you have a winner, display it.
+- [x] End of the game: destroy the current `blackjack` variable so the game restarts.
 
 # Nice to have
 - [ ] Implement a betting system
@@ -159,4 +159,15 @@ This might make my Github look more presentable.
 It would also make working in teams in the future go a **LOT** smoother, since everything is more structured.
 Changing my method like this is something worth practicing.
 
+## NEVER SURRENDER!!
+Out of sheer principles, I decided to add the surrender button to the game **dead last**.
+The word "surrender" simply does not exist in my dictionary.
+I much more prefer the term 'tactical retreat'.
+
+Because of this philosophy of mine, I was able to conquer the mountain we call PHP (Pretty Huge Peak).
+OOP is something completely different, mastering that is something that will definitely take some time.
+Among all the challenges and exercises I have made so far, none were as challenging as this one.
+But because I never surrendered, because I never gave up, I was able to create a result I can be darn tootin' proud of.
+It's still not finished as of right now, but I cleared all the base requirements of the challenge.
+But more importantly, I learned **a lot**!
 
