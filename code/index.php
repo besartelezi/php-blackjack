@@ -69,7 +69,6 @@ elseif ($newGame->getDealer()->hasLost())
 }
 
 //The stand button
-//BUG -> the user can still press this button whenever they like, even after the user has lost because he hit too much
 if (isset($_POST['stand']) && !$newGame->getPlayer()->hasLost())
 {
     //activates the hit function of the dealer
@@ -98,7 +97,7 @@ if (isset($_POST['stand']) && !$newGame->getPlayer()->hasLost())
     }
 }
 
-if(isset($_POST['surrender']))
+if(isset($_POST['surrender']) && !$newGame->getPlayer()->hasLost())
 {
     $newGame->getPlayer()->setLost();
     echo "I have lost a bit of respect for you";
