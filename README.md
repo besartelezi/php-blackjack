@@ -104,7 +104,7 @@ After the hit, I need to check if the player has lost, this means, checking if `
 
 
 - [x] When you click the **stand** button call `hit` on dealer, then check the lost status of the dealer. If he is not lost, compare scores to set the winner (If equal the dealer wins).
-- [ ] **Surrender**: the dealer auto wins.
+- [x] **Surrender**: the dealer auto wins.
 - [x] Always display on the page the scores of both players. If you have a winner, display it.
 - [x] End of the game: destroy the current `blackjack` variable so the game restarts.
 
@@ -171,3 +171,9 @@ But because I never surrendered, because I never gave up, I was able to create a
 It's still not finished as of right now, but I cleared all the base requirements of the challenge.
 But more importantly, I learned **a lot**!
 
+## And now make it look *P R E S E N T A B L E*
+Now that the game works as intended, I still need to finish the following:
+- [ ] Show the cards
+  - [ ] Both cards of the player, only a single card of the dealer
+- [ ] Give different colours to different buttons
+- [ ] Some general styling
