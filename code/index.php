@@ -19,10 +19,10 @@ require 'Blackjack.php';
 </head>
 <body>
 <form action ="index.php" method="post">
-    <button type="submit" name ="hit" value ="hit">Hit</button>
-    <button type="submit" name ="stand" value ="stand">Stand</button>
-    <button type="submit" name ="surrender" value ="surrender">Tactical Retreat</button>
-    <button type="submit" name ="game" value ="game">Try again!</button>
+    <button id="hit" type="submit" name ="hit" value ="hit">Hit</button>
+    <button id="stand" type="submit" name ="stand" value ="stand">Stand</button>
+    <button id="surrender" type="submit" name ="surrender" value ="surrender">Tactical Retreat</button>
+    <button id="game" type="submit" name ="game" value ="game">Try again!</button>
 </form>
 
 <?php
