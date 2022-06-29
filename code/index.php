@@ -21,7 +21,7 @@ require 'Blackjack.php';
 <form action ="index.php" method="post">
     <button type="submit" name ="hit" value ="hit">Hit</button>
     <button type="submit" name ="stand" value ="stand">Stand</button>
-    <button type="submit" name ="surrender" value ="surrender">Surrender</button>
+    <button type="submit" name ="surrender" value ="surrender">Tactical Retreat</button>
     <button type="submit" name ="game" value ="game">Try again!</button>
 </form>
 
@@ -95,6 +95,12 @@ if (isset($_POST['stand']))
         $newGame->getDealer()->setLost();
         echo 'GG EZ, you win!';
     }
+}
+
+if(isset($_POST['surrender']))
+{
+    $newGame->getPlayer()->setLost();
+    echo "I have lost a bit of respect for you";
 }
 
 //The player's and dealer's scores are visible
