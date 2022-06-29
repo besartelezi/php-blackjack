@@ -10,7 +10,7 @@ require 'Blackjack.php';
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,6 +110,12 @@ if (isset($_SESSION))
     echo "The Player's score is: ";
     echo $newGame->getPlayer()->getScore();
     echo "<br>";
+
+    echo "<br>";
+
+    echo "The Dealer's cards are: ";
+    echo "<br>";
+
     echo "The Dealer's score is: ";
     //If the dealer or the player has lost, the dealer's score will be visible
     if ($newGame->getDealer()->hasLost() || $newGame->getPlayer()->hasLost())
@@ -120,7 +126,9 @@ if (isset($_SESSION))
     else
     {
         echo "?";
-    }}
+    }
+    echo "<br>";
+}
 
 //pressing the play again button, destroys the session and resets to the index
 if (isset($_POST['game'])) {
@@ -129,6 +137,17 @@ if (isset($_POST['game'])) {
     header('Location: index.php');
 }
 ?>
+
+
+<!-- Here all the cards in the deck are visible, minus, the cards that have been drawn by the player and dealer
+ <?php foreach ($newGame->getDeck()->getCards() as $card) : ?>
+    <span style="font-size: 120px;"><?= $card->getUnicodeCharacter(true) ?></span>
+<?php endforeach ?>
+--->
+</div>
+
+
+
 
 </body>
 </html>
