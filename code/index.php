@@ -22,9 +22,8 @@ require 'Blackjack.php';
     <button type="submit" name ="hit" value ="hit">Hit</button>
     <button type="submit" name ="stand" value ="stand">Stand</button>
     <button type="submit" name ="surrender" value ="surrender">Surrender</button>
+    <button type="submit" name ="game" value ="game">Try again!</button>
 </form>
-</body>
-</html>
 
 <?php
 
@@ -57,11 +56,11 @@ if (isset($_POST['hit']))
 
 if ($newGame->getPlayer()->hasLost())
 {
-    echo '<button>Play Again! Just try and win this time ok?</button>';
+    echo 'Play Again! Just try and win this time ok?';
 }
 elseif ($newGame->getDealer()->hasLost())
 {
-    echo '<button>Play Again!</button>';
+    echo 'Play Again!';
 }
 
 
@@ -69,18 +68,23 @@ if (isset($_POST['stand']))
 {
     $newGame->getDealer()->hit($newGame->getDeck());
     //find a way to not repeat this line of code
-    $_SESSION['newGame'] = serialize($newGame);
-    header('Location: '.$_SERVER['PHP_SELF']);
-    if (!$newGame->getDealer()->hasLost())
+    if (!$newGame->getDealer()->hasLost() && !$newGame->getPlayer()->hasLost())
     {
-        if ($newGame->getDealer()->getScore()>= $newGame->getPlayer()->getScore())
+        if ($newGame->getDealer()->getScore() >= $newGame->getPlayer()->getScore())
         {
+            $newGame->getPlayer()->setLost();
             echo 'The Dealer wins!';
         }
         else
         {
+            $newGame->getDealer()->setLost();
             echo 'GG EZ, you win!';
         }
+    }
+    else
+    {
+        $newGame->getDealer()->setLost();
+        echo 'GG EZ, you win!';
     }
 }
 
@@ -98,7 +102,15 @@ if (isset($_SESSION))
     else
     {
         echo "?";
-    }
+    }}
+
+if (isset($_POST['game'])) {
+    session_destroy();
+    header('Location: index.php');
 }
 
+
 ?>
+
+</body>
+</html>
